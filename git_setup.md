@@ -3,8 +3,8 @@
 ## 1. Linking A New Repo 
 Open new bash terminal. 
 ```
-mkdir pets_lost_and_found
-cd pets_lost_and_found/
+mkdir my_memos
+cd my_memos
 git init
 ls -a
 ```
@@ -32,11 +32,28 @@ Following on from same terminal, in the same directory where `README` is saved.
 ```
 cat .git/config
 ```
-**Remote origin should be same url as repo. However, if different...**
+The remote origin should be a https. Now, we are changing the connection to SSH. SSH link will be in the github repo. 
 ```
 git remote remove origin 
-git remote add origin [repo https url].
+git remote add origin git@github.com:MichelleHM/my_memos.git
 ```
-Otherwise, contine from the `cat .git/config`. 
+## 3. Allowing auto authentication when git push
 
+This step will only need to be done once for your current computer. A new key will be needed for additional devices. 
+```
+cd ~ 
+cd .ssh
+ssh-keygen 
+cat ~/.ssh/id_rsa.pub
+
+```
+Copy the entire key and then login into your Github account. 
+
+```
+Github > Settings > SSH and GPG keys > New SSH Key. 
+```
+
+Paste the key into the provided space. 
+
+Now your computer is linked to your github!
 
